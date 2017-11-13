@@ -4,7 +4,7 @@ using std:: cout;
 using std:: cin;
 
 bool trocar (int &, int &);
-bool rocar (double &, double &);
+bool trocar (double &, double &);
 
 int main(int argc, char **argv)
 {
