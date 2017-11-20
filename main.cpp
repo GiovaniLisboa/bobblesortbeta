@@ -1,20 +1,27 @@
 #include <stdlib.h>
 #include <iostream>
+#include <time.h>
+
 using std:: cout;
 using std:: cin;
 
+void aleatorio(int &);
 bool trocar (int &, int &);
 bool trocar (double &, double &);
 
 int main(int argc, char **argv)
 {
-    int a = 14;
-    int b = 10;
-    int c = 13;
-    int d = 7;
-    int e = 11;
+    int a, b, c, d, e;
     const int NITER = 5;
     int cont = 0;
+    
+    srand (time(NULL));
+    
+    aleatorio (a);
+    aleatorio (b);
+    aleatorio (c);
+    aleatorio (d);
+    aleatorio (e);
     
     cout << "A: " << a << "\n";
     cout << "B: " << b << "\n";
@@ -24,7 +31,7 @@ int main(int argc, char **argv)
     cout << "\n";
 
     for (int i = 0; i < NITER - 1; i++)
-    {
+    {    
         if (trocar(a, b))
             cont++;
         if (trocar(b, c))
@@ -45,6 +52,11 @@ int main(int argc, char **argv)
     
     cout << "\n";
     return 0;
+}
+
+void aleatorio (int &x)
+{
+    x = (rand() % 20);
 }
 
 bool trocar (int &x, int &y)
